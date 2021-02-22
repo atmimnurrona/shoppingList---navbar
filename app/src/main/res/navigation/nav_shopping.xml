@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_shopping"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.example.shoppinglist_navbar.AddItemFragment"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" />
+    <fragment
+        android:id="@+id/listItemFragment"
+        android:name="com.example.shoppinglist_navbar.ListItemFragment"
+        android:label="fragment_list_item"
+        tools:layout="@layout/fragment_list_item" />
+    <action
+        android:id="@+id/action_global_addItemFragment"
+        app:destination="@id/addItemFragment"
+        app:launchSingleTop="true" />
+    <action
+        android:id="@+id/action_global_listItemFragment"
+        app:destination="@id/listItemFragment"
+        app:launchSingleTop="true" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.shoppinglist_navbar.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"
+        app:launchSingleTop="true" />
+</navigation>
