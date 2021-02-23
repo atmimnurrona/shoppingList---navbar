@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnNavigationListener {
 
-    private var addItemFragment = AddItemFragment()
-    private var listItemFragment = ListItemFragment()
+    private var addItemFragment = AddItemFragment.newInstance(this)
+    private var listItemFragment = ListItemFragment.newInstance(this)
     private var homeFragment = HomeFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,4 +33,12 @@ class MainActivity : AppCompatActivity() {
             transaction.commit()
         }
     }
+
+    override fun showItems() {
+        listItemFragment = ListItemFragment.newInstance(this)
+        replaceFragment(listItemFragment)
+    }
+
+    override fun addItem(item: Item) {
+        ItemList.add(item)    }
 }
