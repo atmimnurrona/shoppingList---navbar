@@ -10,16 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_list_item.*
 
-class ListItemFragment(private val onNavigationListener: OnNavigationListener) : Fragment() {
-
-    private lateinit var navController: NavController
-
-    private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+class ListItemFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -42,8 +36,7 @@ class ListItemFragment(private val onNavigationListener: OnNavigationListener) :
     }
 
     companion object {
-     @JvmStatic
-        fun newInstance(onNavigationListener: OnNavigationListener) =
-            ListItemFragment(onNavigationListener)
+        fun newInstance() =
+                ListItemFragment()
     }
 }

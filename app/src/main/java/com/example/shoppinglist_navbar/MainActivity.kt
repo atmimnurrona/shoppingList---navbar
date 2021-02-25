@@ -3,12 +3,13 @@ package com.example.shoppinglist_navbar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.shoppinglist_navbar.HomeFragment.Companion.newInstance
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), OnNavigationListener {
+class MainActivity : AppCompatActivity() {
 
-    private var addItemFragment = AddItemFragment.newInstance(this)
-    private var listItemFragment = ListItemFragment.newInstance(this)
+    private var addItemFragment = AddItemFragment.newInstance()
+    private var listItemFragment = ListItemFragment.newInstance()
     private var homeFragment = HomeFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,11 +35,11 @@ class MainActivity : AppCompatActivity(), OnNavigationListener {
         }
     }
 
-    override fun showItems() {
-        listItemFragment = ListItemFragment.newInstance(this)
-        replaceFragment(listItemFragment)
-    }
-
-    override fun addItem(item: Item) {
-        ItemList.add(item)    }
+//    override fun showItems() {
+//        listItemFragment = ListItemFragment.newInstance()
+//        replaceFragment(listItemFragment)
+//    }
+//
+//    override fun addItem(item: Item) {
+//        ItemList.add(item)    }
 }
